@@ -9,7 +9,7 @@ const tokenABI = tokenContractJSON.abi;
 async function main() {
   // Set up connections to the Ethereum Goerli network and wallet using Alchemy
   const networkAddress =
-    "https://eth-goerli.g.alchemy.com/v2/Bh22s-iYGmFwy-9Dq3New4jIpUES9xZt";
+    "https://rpc2.sepolia.org/";
   const privateKey = process.env.PRIVATE_KEY;
   const provider = new ethers.providers.JsonRpcProvider(networkAddress);
 
@@ -21,7 +21,7 @@ async function main() {
 
   // Get ERC721A contract instance
   const NFT = await ethers.getContractFactory("MyCollectibles");
-  const nft = await NFT.attach("0xaD8c1EA2fB5Be02DD73E497aB1DdD5EDD5f27C82");
+  const nft = await NFT.attach("0xac311515a5A7d0c88b4b089c3fb69221A68Ec7EE");
 
   // Get the FXRoot contract instance (FxChildTunnel contract on Ethereum FxChain)
   const fxRootAddress = "0xF9bc4a80464E48369303196645e876c8C7D972de";
